@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Secrets (Docker Swarm) ###
+secrets/*
+!secrets/README.md
+!secrets/*.example

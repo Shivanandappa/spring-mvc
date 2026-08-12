@@ -1,0 +1,240 @@
+:root {
+  --brand: #0c3b36;
+  --brand-soft: #1a5c54;
+  --accent: #d97706;
+  --ink: #14201e;
+  --muted: #5b6b68;
+  --surface: rgba(255, 255, 255, 0.88);
+  --line: rgba(12, 59, 54, 0.12);
+  --danger: #b42318;
+  --ok: #067647;
+  --shadow: 0 24px 60px rgba(10, 40, 36, 0.18);
+  --radius: 18px;
+  --font-display: "Syne", sans-serif;
+  --font-body: "Figtree", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 700px at 10% -10%, rgba(217, 119, 6, 0.18), transparent 55%),
+    radial-gradient(900px 600px at 100% 0%, rgba(26, 92, 84, 0.28), transparent 50%),
+    linear-gradient(160deg, #e8f2ef 0%, #d5e6e1 45%, #c5d9d3 100%);
+}
+
+a {
+  color: var(--brand-soft);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+.auth-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem 1.25rem;
+}
+
+.auth-panel {
+  width: min(440px, 100%);
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.25rem 2rem 2rem;
+  animation: rise 0.55s ease both;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--brand);
+  margin: 0 0 0.35rem;
+  line-height: 1;
+}
+
+.lead {
+  margin: 0 0 1.75rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
+.form-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.field label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+.field input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.85rem 0.95rem;
+  font: inherit;
+  background: #fff;
+  color: var(--ink);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--brand-soft);
+  box-shadow: 0 0 0 3px rgba(26, 92, 84, 0.15);
+}
+
+.field .error {
+  color: var(--danger);
+  font-size: 0.82rem;
+}
+
+.btn {
+  appearance: none;
+  border: 0;
+  border-radius: 12px;
+  padding: 0.95rem 1.1rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  background: var(--brand);
+  color: #f7fffc;
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.btn:hover {
+  background: var(--brand-soft);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.form-footer {
+  margin-top: 1.35rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.alert {
+  border-radius: 12px;
+  padding: 0.8rem 0.95rem;
+  margin-bottom: 1rem;
+  font-size: 0.92rem;
+  animation: fade 0.4s ease both;
+}
+
+.alert-error {
+  background: #fef3f2;
+  color: var(--danger);
+  border: 1px solid #fecdca;
+}
+
+.alert-ok {
+  background: #ecfdf3;
+  color: var(--ok);
+  border: 1px solid #abefc6;
+}
+
+.home-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem 1.25rem;
+}
+
+.home-card {
+  width: min(560px, 100%);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  animation: rise 0.55s ease both;
+}
+
+.home-card h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.4rem);
+  margin: 0 0 0.5rem;
+  color: var(--brand);
+}
+
+.home-card p {
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+}
+
+.home-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--brand);
+  border: 1px solid var(--line);
+}
+
+.btn-ghost:hover {
+  background: rgba(12, 59, 54, 0.06);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-panel,
+  .home-card {
+    padding: 1.6rem 1.2rem;
+  }
+}

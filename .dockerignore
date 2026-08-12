@@ -1,0 +1,10 @@
+target/
+.git/
+.idea/
+.vscode/
+docs/
+*.md
+.mvn/wrapper/maven-wrapper.jar
+secrets/
+**/secrets/
+compose.yaml

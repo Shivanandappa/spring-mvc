@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Start – Spring MVC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/app.css}">
+</head>
+<body>
+  <main class="home-shell">
+    <section class="home-card">
+      <p class="brand">Spring MVC</p>
+      <h1 th:text="'Hallo, ' + ${displayName}">Hallo</h1>
+      <p th:text="${email}">user@example.com</p>
+      <div class="home-actions">
+        <form th:action="@{/logout}" method="post">
+          <button class="btn btn-ghost" type="submit">Abmelden</button>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
